@@ -1,37 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <script src="js/script.js" async></script>
 
-    <title>1-SVG</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script defer src="js/script.js" async></script>
 
-    <h1>Dessiner des formes</h1>
-    <h2>Rectangle</h2>
+  <title>1-SVG</title>
+</head>
 
-    <h2>Donut</h2>
+<body>
+
+  <h1>Dessiner des formes</h1>
+  <h2>Rectangle</h2>
+  <svg>
+    <rect x="0" y="0" width="400" height="100" fill="steelblue" />
+  </svg>
+
+  <h2>Donut</h2>
+
+  <svg>
+    <circle cx="70" cy="70" r="60" fill="none" stroke="black" stroke-width="5" border="black" fill-opacity="0" />
+    <circle cx="70" cy="70" r="30" fill="white" stroke="black" stroke-width="5" border="black" fill-opacity="0" />
+  </svg>
+
+  <h2>Ligne</h2>
+  <svg>
+    <line x1="20" y1="0" x2="50" y2="100" stroke="red" />
+  </svg>
 
 
-    <h2>Ligne</h2>
+  <h2>Path</h2>
+  <svg>
+    <path d="M 0 10 L 0 50" fill="none" stroke="black" stroke-width="5"></path>
+    <path d="M 0 10 C 50 0, 60 50, 0 50" stroke="black" fill="transparent" stroke-width="5" />
+  </svg>
+  </br>
+  <svg width="600">
+    <!-- <path d="M 0 10 L 0 100 L 70 70 L 70 20 L 0 0" fill="none" stroke="black" stroke-width="1"></path>
+    <path d="M 120 100 L 120 0 H 120 180 V 20 100 M 120 50 H 120 180" fill="none" stroke="black" stroke-width="1"></path>
+    <path d="M 240 100 L 240 0 L 360 200 M 360 100 L 420 100" fill="none" stroke="black" stroke-width="1"></path>
+    <path d="M 240 100 L 240 0 L 360 200" fill="none" stroke="black" stroke-width="1"></path> -->
+    <path d="M 0 0 L0 90 L60 90 L60 0 L 0 0" fill="none" stroke="black" stroke-width="1"></path>
+    <path d="M 120 90 L 120 0 L 180 0 L 180 90 M 120 45 L180 45 " stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M 240 90 L 240 0 L 300 90 L 300 0" fill="none" stroke="black" stroke-width="1"></path>
+    <path d="M 360 90 L 360 0" fill="none" stroke="black" stroke-width="1"></path>
+    <path d="M 480 90 L420 90 L420 0 L 480 0 M 420 45 L480 45" fill="none" stroke="black" stroke-width="1"></path>
+  <path d="M 600 90 L 540 90 L 540 0" fill="none" stroke="black" stroke-width="1"></path>
+  </svg>
+  </path>
+
+  <h1>Animer des formes</h1>
+
+  <h2>On click</h2>
+  <h3>avec js et css</h3>
+  <svg>
+    <rect class="rectangleTwo" x="0" y="0" width="400" height="100" />
+  </svg>
+  <h3>avec :active et transition</h3>
+  <svg>
+    <rect class="rectangle" x="0" y="0" width="400" height="100" />
+  </svg>
 
 
-    <h2>Path</h2>
+
+  <h2>On hover</h2>
 
 
-    <h1>Animer des formes</h1>
+    <svg heigth="500px" margin="50px">
+      <circle class ="leCercle" cx="100" cy="70" r="60" fill="none" stroke="black" stroke-width="5" border="black" fill-opacity="0" />
+      <circle cx="100" cy="70" r="30" fill="white" stroke="black" stroke-width="5" border="black" fill-opacity="0" />
+    </svg>
+  
 
-    <h2>On click</h2>
+    <h2>Prenez la première lettre de votre prénom que vous avez créée ci-dessus. Faite bouger une forme de votre choix le
+      long de la lettre</h2>
+      <svg>
+      <circle class="movingCircle" cx="0" cy="0" r="10" fill="RED" stroke="black" stroke-width="0" border="none" fill-opacity="1" />
+      <path d="M 10 10 L10 90 L60 90 L60 10 L 10 10" fill="none" stroke="black" stroke-width="1"></path>
+    </svg>
 
-    <h2>On hover</h2>
-
-    <h2>Prenez la première lettre de votre prénom que vous avez créée ci-dessus. Faite bouger une forme de votre choix le long de la lettre</h2>
+    </body>
 
 
-  </body>
 </html>

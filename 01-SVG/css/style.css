@@ -1,3 +1,37 @@
 body {
       font-family: 'Open Sans', sans-serif;
 }
+
+.rectangle{
+      fill: steelblue;
+}
+
+.rectangle:active{
+      fill: red;
+     transition: fill 1s ease;
+}
+
+.rectangleTwo{
+      fill: grey;
+}
+
+.active{
+      fill: red;
+}
+
+.movingCircle{
+      offset-path: path('M 10 10 L10 90 L60 90 L60 10 L 10 10');
+      animation: move 3s linear infinite;
+}
+
+@keyframes move {
+      100% { 
+        motion-offset: 100%;
+        offset-distance: 100%;
+      }
+}
+
+svg{
+      padding: 20px;
+      margin-left: 40px;
+}
