@@ -16,9 +16,14 @@ domOn('.rectangleTwo', 'click', evt=>{
     }
 })
 
-domOn('.leCercle', 'mouseover', evt=>{
+domOn('.cercle', 'mouseover', evt=>{
     console.log(evt.target)
-    evt.target.setAttribute("r", "90");
+    document.querySelector('.leCercle').setAttribute("r", "90");
     
 })
+
+domOn('.cercle', 'mouseleave', evt=>{
+    document.querySelector('.leCercle').setAttribute("r", "60");
+})
+
 
