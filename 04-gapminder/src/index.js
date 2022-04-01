@@ -118,16 +118,16 @@ svg.append("g")
   .call(d3.axisBottom(x));
 
 // Add Y axis
-var y = d3.scalePow()
-  .domain([0, maxLife])
+var y = d3.scaleLinear()
+  .domain([40, maxLife])
   .range([height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
 
 // Add a scale for bubble size
-var z = d3.scaleLinear()
+var z = d3.scaleSqrt()
   .domain([0, maxPop])
-  .range([4, 30]);
+  .range([0, 30]);
 
   svg.append('g')
     .selectAll("dot")
