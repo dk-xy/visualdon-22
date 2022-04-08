@@ -159,13 +159,12 @@ var svg = d3.select("#my_dataviz")
 
     
 let colorScale = d3.scaleThreshold()
-  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-  .range(d3.schemeBlues[7]);
+  .domain([100000, 1000000, 10000000, 30000000, 100000000, 50000000, 100000000])
+  .range(d3.schemeBlues[8]);
 
 // Load external data and boot
 Promise.all([
   d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson", function(d) {
-      data.set(d.code, +popArray)
   })]).then(function(loadData){
       let topo = loadData[0]
     
@@ -191,8 +190,8 @@ Promise.all([
           .duration(200)
           .style("stroke", "transparent")
       }
-      //console.log(topo) //topo.features
-    
+      console.log(topo) //topo.features
+      console.log(pop[221])
       // Draw the map
       svg.append("g")
         .selectAll("path")
@@ -205,12 +204,14 @@ Promise.all([
           )
           .style("stroke","black")
           // set the color of each country
+          
           .attr("fill", (d,i) => { 
             let populasse = pop[221].data.find(pop=> pop.country == d.properties.name) || 0 ;
             console.log(populasse)
             if (populasse == 0){
               return('white')
-            } else{return colorScale(populasse.pop);}
+            } else{
+              return colorScale(populasse.pop);}
             
           })
           
